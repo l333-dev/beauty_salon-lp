@@ -1,0 +1,23 @@
+<svg width="640" height="760" viewBox="0 0 640 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="760" rx="36" fill="#FFF4EE"/>
+  <circle cx="490" cy="150" r="98" fill="#FFD166" fill-opacity="0.55"/>
+  <circle cx="124" cy="620" r="120" fill="#0F9F9A" fill-opacity="0.18"/>
+  <rect x="64" y="76" width="512" height="608" rx="28" fill="white"/>
+  <rect x="102" y="124" width="436" height="352" rx="24" fill="url(#paint0_linear_1_2)"/>
+  <rect x="102" y="510" width="220" height="18" rx="9" fill="#EADBD4"/>
+  <rect x="102" y="544" width="330" height="14" rx="7" fill="#F0E4DE"/>
+  <rect x="102" y="574" width="284" height="14" rx="7" fill="#F0E4DE"/>
+  <rect x="430" y="510" width="108" height="108" rx="24" fill="#FFF1EA"/>
+  <path d="M320 182C264.772 182 220 226.772 220 282V364H420V282C420 226.772 375.228 182 320 182Z" fill="#FFE3D8"/>
+  <circle cx="320" cy="246" r="70" fill="#FFD3C2"/>
+  <path d="M247 233C247 186.056 285.056 148 332 148C378.944 148 417 186.056 417 233V244H247V233Z" fill="#2A2340"/>
+  <path d="M257 321C281.832 345.758 302.546 358 320 358C337.454 358 358.168 345.758 383 321V364H257V321Z" fill="#FF7F6A"/>
+  <text x="320" y="667" text-anchor="middle" fill="#5F5575" font-family="'Hiragino Kaku Gothic ProN', sans-serif" font-size="24" letter-spacing="3">PLACEHOLDER IMAGE</text>
+  <defs>
+    <linearGradient id="paint0_linear_1_2" x1="102" y1="124" x2="538" y2="476" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF3C8"/>
+      <stop offset="0.55" stop-color="#FFD8D1"/>
+      <stop offset="1" stop-color="#D8F4F1"/>
+    </linearGradient>
+  </defs>
+</svg>
