@@ -1,16 +1,16 @@
 :root {
-  --color-ink: #2a2340;
-  --color-subtext: #5f5575;
-  --color-surface: #fffaf6;
+  --color-ink: #342833;
+  --color-subtext: #6d5b64;
+  --color-surface: #fffaf7;
   --color-surface-strong: #ffffff;
-  --color-surface-soft: #fff1ea;
-  --color-accent: #ff7f6a;
-  --color-accent-deep: #ef5f4c;
-  --color-secondary: #0f9f9a;
-  --color-secondary-soft: #d8f4f1;
-  --color-highlight: #ffd166;
-  --color-line: rgba(42, 35, 64, 0.12);
-  --shadow-soft: 0 20px 50px rgba(42, 35, 64, 0.1);
+  --color-surface-soft: #fff1eb;
+  --color-accent: #eb9a86;
+  --color-accent-deep: #d97860;
+  --color-secondary: #789889;
+  --color-secondary-soft: #e5f0ea;
+  --color-highlight: #f0c77a;
+  --color-line: rgba(52, 40, 51, 0.12);
+  --shadow-soft: 0 22px 60px rgba(52, 40, 51, 0.1);
   --radius-sm: 16px;
   --radius-md: 24px;
   --radius-lg: 36px;
@@ -33,9 +33,9 @@ body {
   margin: 0;
   color: var(--color-ink);
   background:
-    radial-gradient(circle at top left, rgba(255, 209, 102, 0.4), transparent 24%),
-    radial-gradient(circle at 90% 10%, rgba(15, 159, 154, 0.18), transparent 25%),
-    linear-gradient(180deg, #fff7f1 0%, #fffdfb 48%, #fff4ee 100%);
+    radial-gradient(circle at top left, rgba(240, 199, 122, 0.32), transparent 24%),
+    radial-gradient(circle at 88% 10%, rgba(120, 152, 137, 0.16), transparent 26%),
+    linear-gradient(180deg, #fff8f3 0%, #fffdfb 48%, #fff3ee 100%);
   font-family: var(--font-sans);
   line-height: 1.7;
 }
@@ -70,8 +70,8 @@ button {
 .section--accent {
   color: #fffdf8;
   background:
-    radial-gradient(circle at top right, rgba(255, 209, 102, 0.24), transparent 24%),
-    linear-gradient(135deg, #0f9f9a, #2574a9 55%, #35477d);
+    radial-gradient(circle at top right, rgba(240, 199, 122, 0.18), transparent 24%),
+    linear-gradient(135deg, #7d9b8e, #8e8b9e 55%, #5b697e);
 }
 
 .section-heading {
@@ -100,6 +100,8 @@ button {
 
 .section-heading p,
 .hero__lead,
+.hero__metrics dd,
+.hero__visual-detail p,
 .access-list dd,
 .problem-card p,
 .voice-card p,
@@ -133,7 +135,7 @@ button {
   z-index: 20;
   padding: 14px 0;
   backdrop-filter: blur(16px);
-  background: rgba(255, 250, 246, 0.84);
+  background: rgba(255, 250, 247, 0.9);
   border-bottom: 1px solid rgba(42, 35, 64, 0.06);
 }
 
@@ -258,17 +260,38 @@ button {
 
 .hero {
   overflow: clip;
-  padding-top: 40px;
+  padding-top: clamp(28px, 5vw, 56px);
 }
 
 .hero__inner {
   display: grid;
-  gap: 36px;
+  gap: 28px;
   align-items: center;
 }
 
 .hero h1 {
   font-size: clamp(2.3rem, 7vw, 4.8rem);
+}
+
+.hero__subcopy {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 14px;
+  color: var(--color-accent-deep);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.hero__subcopy::before {
+  content: "";
+  width: 36px;
+  height: 1px;
+  background: currentColor;
+}
+
+.hero__lead {
+  max-width: 32rem;
 }
 
 .hero__actions {
@@ -283,55 +306,114 @@ button {
   flex-wrap: wrap;
   gap: 10px;
   padding: 0;
-  margin: 0;
+  margin: 0 0 24px;
   list-style: none;
 }
 
 .hero__badges li {
   padding: 9px 14px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.82);
   border: 1px solid rgba(42, 35, 64, 0.08);
   font-size: 0.9rem;
 }
 
+.hero__metrics {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+.hero__metrics div {
+  padding: 16px 18px;
+  border: 1px solid rgba(52, 40, 51, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 12px 30px rgba(52, 40, 51, 0.06);
+}
+
+.hero__metrics dt {
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.hero__metrics dd {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
 .hero__visual {
   position: relative;
+  order: -1;
+  display: grid;
+  gap: 16px;
 }
 
 .hero-card {
   position: relative;
-  padding: 14px;
-  border-radius: 34px;
+  overflow: hidden;
+  padding: 16px;
+  border-radius: 40px;
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.55)),
-    linear-gradient(135deg, rgba(255, 127, 106, 0.32), rgba(15, 159, 154, 0.3));
+    linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.58)),
+    linear-gradient(135deg, rgba(235, 154, 134, 0.34), rgba(120, 152, 137, 0.26));
   box-shadow: var(--shadow-soft);
 }
 
 .hero-card::before {
   content: "";
   position: absolute;
-  inset: -16px auto auto -16px;
-  width: 88px;
-  height: 88px;
+  inset: auto -26px -26px auto;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
-  background: rgba(255, 209, 102, 0.5);
-  filter: blur(6px);
+  background: rgba(240, 199, 122, 0.38);
+  filter: blur(18px);
 }
 
 .hero-card img {
-  border-radius: 24px;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 28px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-card__caption {
+  position: absolute;
+  right: 30px;
+  bottom: 28px;
+  display: grid;
+  gap: 4px;
+  max-width: 240px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 18px;
+  color: #fffdfb;
+  background: linear-gradient(180deg, rgba(52, 40, 51, 0.2), rgba(52, 40, 51, 0.56));
+  backdrop-filter: blur(10px);
+}
+
+.hero-card__caption strong {
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero-card__caption span {
+  font-size: 0.92rem;
+  line-height: 1.5;
 }
 
 .floating-note {
   position: absolute;
   display: grid;
   gap: 4px;
-  max-width: 180px;
+  max-width: 200px;
   padding: 14px 16px;
+  border: 1px solid rgba(52, 40, 51, 0.08);
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.9);
   box-shadow: var(--shadow-soft);
   font-size: 0.88rem;
 }
@@ -341,13 +423,27 @@ button {
 }
 
 .floating-note--top {
-  top: -12px;
-  right: 10px;
+  top: 14px;
+  right: 14px;
 }
 
 .floating-note--bottom {
-  bottom: -18px;
-  left: -4px;
+  bottom: 14px;
+  left: 14px;
+}
+
+.hero__visual-detail {
+  max-width: 26rem;
+  margin-left: auto;
+  padding: 16px 18px;
+  border: 1px solid rgba(52, 40, 51, 0.08);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 16px 40px rgba(52, 40, 51, 0.07);
+}
+
+.hero__visual-detail p {
+  margin: 0;
 }
 
 .button {
@@ -371,7 +467,7 @@ button {
 .button--primary {
   color: #fff;
   background: linear-gradient(135deg, var(--color-accent), var(--color-accent-deep));
-  box-shadow: 0 16px 30px rgba(239, 95, 76, 0.25);
+  box-shadow: 0 16px 30px rgba(217, 120, 96, 0.24);
 }
 
 .button--secondary {
@@ -399,7 +495,7 @@ button {
 .cta-section__inner {
   border: 1px solid rgba(42, 35, 64, 0.08);
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.86);
+  background: rgba(255, 255, 255, 0.88);
   box-shadow: var(--shadow-soft);
 }
 
@@ -452,6 +548,9 @@ button {
 .voice-card {
   padding: 28px 24px;
   color: var(--color-ink);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.84)),
+    rgba(255, 255, 255, 0.9);
 }
 
 .voice-card img {
@@ -498,7 +597,7 @@ button {
   padding: 28px;
   background:
     radial-gradient(circle at top left, rgba(255, 209, 102, 0.34), transparent 24%),
-    linear-gradient(135deg, rgba(255, 127, 106, 0.12), rgba(15, 159, 154, 0.12)),
+    linear-gradient(135deg, rgba(235, 154, 134, 0.14), rgba(120, 152, 137, 0.14)),
     #fff;
 }
 
@@ -587,11 +686,34 @@ button {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .hero__inner {
+    gap: 48px;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  }
+
+  .hero__visual {
+    order: 0;
+  }
+
   .hero__actions,
   .cta-actions {
     flex-direction: row;
     grid-auto-flow: column;
     justify-content: start;
+  }
+
+  .hero__metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .floating-note--top {
+    top: 18px;
+    right: -20px;
+  }
+
+  .floating-note--bottom {
+    bottom: 20px;
+    left: -24px;
   }
 
   .problem-grid,
@@ -608,6 +730,10 @@ button {
 @media (min-width: 1100px) {
   .hero {
     padding-top: 56px;
+  }
+
+  .hero__metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .problem-grid {
