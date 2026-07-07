@@ -54,6 +54,23 @@ button {
   font: inherit;
 }
 
+.skip-link {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 30;
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--color-ink);
+  transform: translateY(-140%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 .container {
   width: var(--container);
   margin: 0 auto;
@@ -619,8 +636,42 @@ button {
 }
 
 .site-footer__brand,
+.site-footer__info,
 .site-footer__copy {
   margin: 0;
+}
+
+.sticky-cta {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  left: 16px;
+  z-index: 25;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid rgba(52, 40, 51, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 20px 45px rgba(52, 40, 51, 0.16);
+  backdrop-filter: blur(12px);
+}
+
+.sticky-cta__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  border-radius: 999px;
+  color: var(--color-ink);
+  background: #fff;
+  font-weight: 700;
+}
+
+.sticky-cta__link--accent {
+  color: #fff;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-deep));
 }
 
 .js-enabled [data-reveal] {
@@ -742,5 +793,11 @@ button {
 
   .voice-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .sticky-cta {
+    display: none;
   }
 }
